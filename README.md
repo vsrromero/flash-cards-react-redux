@@ -5,6 +5,8 @@
 Project developed as part of codecademy portfolio project.  
 This project is focused in using React-redux to control the states of the project using redux toolkit.
 
+You can find the app deployed at https://quiz-flashcards.netlify.app/
+
 ## Overview
 
 Instead of a step-by-step tutorial, this project contains a series of open-ended requirements which describe the project you’ll be building. There are many possible ways to correctly fulfill all of these requirements, and you should expect to use the internet, Codecademy, and other resources when you encounter a problem that you cannot easily solve.
