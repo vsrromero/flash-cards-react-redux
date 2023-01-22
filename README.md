@@ -65,7 +65,7 @@ console.log(uniqueId);
     * Each individual quiz will have a `topicId` value corresponding to an individual topic in state.
     * Similarly, each topic which will have a `quizIds` array corresponding to the associated quizzes in state.  
     All together, your app state will look like this:<br/><br/>
-    ~~~json
+    ~~~javascript
         {
             topics: {
                 topics: {
@@ -129,14 +129,14 @@ Verify that your code is working by filling out the form and submitting it. You 
     * Is named `'quizzes'`
     * Has initial state consisting of an object that includes one property, `quizzes`, which corresponds to an empty object. This inner `quizzes` object will eventually hold all quizzes keyed by `id`.
     * Has an `addQuiz` action. This action will receive a payload of the form 
-    ~~~json 
+    ~~~javascript 
     {id: '123', name: 'quiz name', topicId: '456', cardIds: ['1', '2', '3', ...]}
     ~~~  
 
     * Export the selector as well as the action creators and reducer that your slice generates.  
 
 11. Next, you should add an action to your topics slice that adds a quiz’s `id` to the `quizIds` array of the topic with which the newly quiz is associated. This action action will receive a payload of the form  
- ~~~json
+ ~~~javascript
  {quizId: '123', topicId: '456'} 
  ~~~
  Make sure to export this action creator for use elsewhere in the app.  
@@ -147,7 +147,7 @@ Verify that your code is working by filling out the form and submitting it. You 
 
 14. Next, import the thunk action creator from your quiz slice and dispatch it from the `handleSubmit()` event handler that fires when the new quiz form is submitted.
     * Remember, that action creator expects to receive a payload of the form
-    ~~~json 
+    ~~~javascript 
     { id: '123', name: 'quiz name', topicId: '456', cardIds: ['1', '2', '3', ...]}
     ~~~ 
     > You’ll have to generate an id by calling uuidv4. For now, pass the empty `cardIds` array variable for the `cardIds` property (you’ll change that in a later task).  
@@ -162,7 +162,7 @@ Verify that your code is working by filling out the form and submitting it. You 
     * Is named `'cards'`
     * Has initial state consisting of an object that includes one property, cards, which corresponds to an empty object. This inner cards object will eventually hold all cards keyed by id.
     * Has an addCard action. This action will receive a payload of the form 
-    ~~~json
+    ~~~javascript
     { id: '123', front: 'front of card', back: 'back of card'}.
     ~~~
 
@@ -170,7 +170,7 @@ Verify that your code is working by filling out the form and submitting it. You 
 
     1. `dispatch` your `addCard` action creator. You will have to generate an id for each card using `uuidv4`.
     2. Store the `id` you create for each card in the `cardIds` array we’ve provided for you. Remember, your action creator expects to receive a payload of the form 
-    ~~~json
+    ~~~javascript
     { id: '123', front: 'front of card', back: 'back of card'}
     ~~~ 
     You want to collect all the `cardIds` in an array so that you can pass them to the action creator that generates new quizzes. To use `uuidv4` to create an id, call the function like so: `uuidv4()`.
